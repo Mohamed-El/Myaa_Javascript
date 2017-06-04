@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Drive API - Een eerste begin</title>
+    <script>
+        var apiKey = 'AIzaSyAmd2VnWexHajlyARnDykoXQUHyGg24RsM';
+        var clientId = '420594077145-po45ldmitjnulihvt5309kmeoltb9pmq.apps.googleusercontent.com';
+        var scopes = ['profile', 'https://www.googleapis.com/auth/drive.file'];
+    </script>
+    <link rel="stylesheet" href="css/myaa.css" type="text/css" />
+    <script type="text/javascript" src="js/google-oauth-api.js"></script>
+    <script type="text/javascript" src="js/google-people-api.js"></script>
+    <script type="text/javascript" src="js/google-drive-api.js"></script>
+    <script type="text/javascript" src="js/helpers.js"></script>
+    <script>
+        /**
+         * Handle the initial sign-in state.
+         * This method is called by the OAuth initAuth method and is
+         * called once the user is signed in succesfully
+         */
+        var handleInitialSignInStatus = function() {
+            updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+            signinButton.addEventListener("click", signIn);
+            signoutButton.addEventListener("click", signOut);
+            createFolderButton.addEventListener("click", prepareCreateFolder);
+            makePeopleApiCall();
+            makeDriveApiCall();
+        }
+    </script>
+</head>
+<body>
+    <header id=user-profile>
+        <h1>Myaa</h1>
+        <!--Knoppen toevoegen om auth te initialiseren en af te melden -->
+        <button id="signin-button">Aanmelden</button>
+        <button id="signout-button">Afmelden</button>
+    </header>
+    <main>
+        <div id="editor">
+            <header class="command-panel"></header>
+            <textarea></textarea>
+        </div>
+        <aside id="explorer">
+            <header class="command-panel">
+                <label for="folder-name">Foldernaam: </label>
+                <input type="text" placeholder="naam nieuwe map" id="folderName" />
+                <button type="button" id="createFolderButton">Folder maken</button>
+            </header>
+            <div id="list"></div>
+        </aside>
+    </main>
+    <div id="feedback">
+    </div>
+    <script>
+        var signinButton = document.getElementById('signin-button');
+        var signoutButton = document.getElementById('signout-button');
+    </script>
+    <script src="https://apis.google.com/js/api.js?onload=handleClientLoad"></script>
+</body>
+</html>

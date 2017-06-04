@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#user-profile {
+    height: 17%;
+    width: 100%;
+    background-color: #e24510 /* H1 header rood, realgar */
+}
+
+#user-profile h1 {
+    float: left;
+}
+
+#user-profile img {
+    float: right;
+}
+
+#signin-button, #signout-button {
+    display: none;
+    float: right;
+}
+
+main {
+    height: 83%;
+    width: 100%;
+}
+
+#editor {
+    height: 100%;
+    width: 60%;
+    float: left;
+    background-color: #faebd7 /* Antique white mocassin */
+}
+
+#editor textarea {
+    width: 100%;
+    height: 90%;
+    background-color: #fff8e7 /* COSMIC LATTE */
+}
+
+#editor .command-panel {
+    height: 10%;
+    width: 100%;
+    background-color: #010101 /* Lamp black */
+}
+
+#explorer {
+    height: 100%;
+    width: 40%;
+    float: right;
+    overflow-y: auto;
+    background-color: #faf0e6 /* linnen */
+}
+
+#explorer ul {
+    margin: 0 1em 0 1em;
+}
